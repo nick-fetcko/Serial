@@ -13,7 +13,7 @@ namespace serial {
 class Node final {
 public:
     Node() noexcept {} // = default;
-    Node(const Node &node) noexcept = default;
+    Node(const Node &node) = default;
     Node(Node &&node) noexcept = default;
 
     template<typename T, typename = std::enable_if_t<std::is_convertible_v<T *, NodeFormat *>>>

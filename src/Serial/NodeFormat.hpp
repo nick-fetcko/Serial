@@ -1,5 +1,6 @@
 #pragma once
 
+#include <codecvt>
 #include <sstream>
 
 #include "NodeView.hpp"

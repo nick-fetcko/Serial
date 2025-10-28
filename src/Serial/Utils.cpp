@@ -1,6 +1,7 @@
 #include "Utils.hpp"
 
 #include <codecvt>
+#include <locale>
 
 namespace serial::utils {
 
