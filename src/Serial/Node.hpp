@@ -71,6 +71,7 @@ public:
     bool has(uint32_t index) const;
 
     NodeConstView property(const std::string &name) const;
+    Node *mutableProperty(const std::string &name);
     NodeConstView property(uint32_t index) const;
     NodeView property(const std::string &name);
     NodeView property(uint32_t index);

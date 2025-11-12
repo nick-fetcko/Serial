@@ -48,6 +48,14 @@ NodeConstView Node::property(const std::string &name) const {
     return {this, name, nullptr};
 }
 
+Node *Node::mutableProperty(const std::string &name) {
+    for (auto &[propertyName, property] : _properties) {
+        if (propertyName == name)
+            return &property;
+    }
+    return nullptr;
+}
+
 NodeConstView Node::property(uint32_t index) const {
     if (index < _properties.size())
         return {this, index, &_properties[index].second};
