@@ -69,6 +69,8 @@ void Xml::AddToken(std::string_view view, std::vector<Token> &tokens) {
 }
 
 void Xml::Convert(Node &current, const std::vector<Token> &tokens, int32_t &k) {
+	if (k >= tokens.size()) throw std::runtime_error("Likely missing closing token(s)! (\"/>\")");
+
     // Only start to parse if we are at the start of a tag.
     if (tokens[k] != Token(NodeType::Token, "<"))
         return;
