@@ -18,3 +18,10 @@ target_include_directories(serial PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
         )
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "" FILES ${_serial_sources})
+
+if(LINUX)
+        # Here lies wstring_convert
+        # C++11 - C++17
+        # Gone Too Soon
+        target_compile_options(serial PRIVATE -Wno-deprecated-declarations)
+endif()
